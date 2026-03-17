@@ -1,0 +1,89 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "IBM Plex Sans", sans-serif;
+  font-size: 15px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #d6e2ea;
+}
+
+
+#workspaces,
+#window,
+#clock,
+#custom-updates,
+#cpu,
+#memory,
+#temperature,
+#disk,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#language,
+#idle_inhibitor,
+#tray,
+#custom-power {
+  background: rgba(19, 23, 27, 0.78);
+  border: 1px solid rgba(94, 161, 200, 0.2);
+  margin: 6px 0;
+  padding: 4px 11px;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  color: #95a6b2;
+  background: transparent;
+  padding: 0 10px;
+  margin: 2px;
+  border-radius: 8px;
+  transition: all 120ms ease;
+}
+
+#workspaces button:hover {
+  color: #d6e2ea;
+  background: rgba(94, 161, 200, 0.18);
+}
+
+#workspaces button.focused {
+  color: #0f1418;
+  background: linear-gradient(135deg, #5ea1c8, #79b9de);
+}
+
+#window {
+  color: #95a6b2;
+}
+
+#clock {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+#custom-updates.ok {
+  color: #8ec07c;
+}
+
+#custom-updates.warn,
+#temperature.critical,
+#battery.warning {
+  color: #d8a657;
+}
+
+#battery.critical,
+#network.disconnected {
+  color: #e67e80;
+}
+
+#custom-power {
+  color: #101317;
+  background: linear-gradient(135deg, #d19a66, #e2b07a);
+  font-weight: 700;
+}
+
+#custom-power:hover {
+  background: linear-gradient(135deg, #e2b07a, #e8c190);
+}

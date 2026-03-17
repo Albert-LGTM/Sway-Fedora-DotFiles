@@ -1,0 +1,126 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 6,
+
+  "modules-left": ["sway/workspaces", "sway/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "custom/updates",
+    "cpu",
+    "memory",
+    "temperature",
+    "disk",
+    "network",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "sway/language",
+    "tray"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "on-click": "activate"
+  },
+
+  "sway/window": {
+    "format": "{title}",
+    "max-length": 80,
+    "rewrite": {
+      "": "Desktop"
+    }
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "󰥔 {:%a %d %b  %H:%M:%S}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+
+  "custom/updates": {
+    "format": "󰚰 {text}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "interval": 1800,
+    "on-click": "alacritty -e bash -lc 'sudo dnf upgrade --refresh'"
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 3,
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": "󰍛 {}%",
+    "interval": 3
+  },
+
+  "temperature": {
+    "critical-threshold": 85,
+    "format": "󰔏 {temperatureC}C",
+    "format-critical": "󰸁 {temperatureC}C"
+  },
+
+  "disk": {
+    "path": "/",
+    "format": "󰋊  {percentage_used}%",
+    "tooltip-format": "{used}/{total} used"
+  },
+
+  "network": {
+    "format-wifi": "󰖩  {essid} {signalStrength}%",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-linked": "󰈀 linked",
+    "format-disconnected": "󰖪 offline",
+    "tooltip-format": "{ifname} via {gwaddr}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 mute",
+    "format-icons": {
+      "headphone": "󰋋 ",
+      "hands-free": "󰋎 ",
+      "headset": "󰋎 ",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": "󰃠  {percent}%"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 25,
+      "critical": 12
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+    "tooltip": true
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "sway/language": {
+    "format": "󰌌  {short}",
+    "tooltip-format": "{long}"
+  }
+}
