@@ -1,0 +1,39 @@
+* {
+  font-family: "Iosevka Term", "JetBrainsMono Nerd Font", monospace;
+  font-size: 15px;
+}
+
+window {
+  margin: 0;
+  border: 2px solid #5ea1c8;
+  border-radius: 14px;
+  background-color: rgba(19, 23, 27, 0.95);
+}
+
+#input {
+  margin: 14px;
+  border: 1px solid #2f3a40;
+  border-radius: 10px;
+  color: #d6e2ea;
+  background: #1a2126;
+  padding: 10px 12px;
+}
+
+#inner-box {
+  margin: 0 14px 14px 14px;
+}
+
+#entry {
+  border-radius: 10px;
+  padding: 9px 12px;
+  color: #9fb0bc;
+}
+
+#entry:selected {
+  color: #101317;
+  background: linear-gradient(135deg, #5ea1c8, #79b9de);
+}
+
+#text:selected {
+  color: #101317;
+}

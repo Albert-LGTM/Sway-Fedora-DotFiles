@@ -1,0 +1,10 @@
+width=720
+height=460
+location=center
+show=drun
+prompt=Search
+insensitive=true
+allow_images=true
+term=alacritty
+sort_order=alphabetical
+gtk_dark=true
